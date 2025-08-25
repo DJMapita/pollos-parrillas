@@ -36,7 +36,11 @@ export default function Landing({ onSelectOrderType, onViewHistory }: LandingPro
       <div className="min-h-screen bg-gradient-to-br from-red-900 via-red-800 to-orange-900 flex items-center justify-center p-4">
         <div className="text-center text-white">
           <div className="animate-bounce mb-8">
-            <Flame className="w-24 h-24 mx-auto text-orange-400" />
+            <img 
+              src="/GranPollonLogo.png" 
+              alt="Logo" 
+              className="w-24 h-24 mx-auto"
+            />
           </div>
           <h1 className="text-4xl font-bold mb-4">¡Bienvenido!</h1>
           <p className="text-xl mb-2">Mesa #{detectedTable} detectada</p>
@@ -50,7 +54,7 @@ export default function Landing({ onSelectOrderType, onViewHistory }: LandingPro
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-900 via-red-800 to-orange-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-black via-stone-950 to-orange-700 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-orange-400 animate-pulse"></div>
@@ -62,9 +66,13 @@ export default function Landing({ onSelectOrderType, onViewHistory }: LandingPro
         {/* Header */}
         <div className="text-center pt-12 pb-8">
           <div className="animate-fadeInDown">
-            <Flame className="w-20 h-20 mx-auto text-orange-400 mb-6 animate-bounce" />
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-              LA BRASA
+            <img 
+              src="/GranPollonLogo.png" 
+              alt="Logo" 
+              className="w-32 h-32 mx-auto"
+            />
+            <h1 className="text-5xl md:text-7xl font-bold text-orange-600 mb-4">
+              GRAN POLLON
             </h1>
             <p className="text-xl md:text-2xl text-orange-200 font-light">
               Pollos & Parrillas
