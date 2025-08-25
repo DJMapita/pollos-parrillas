@@ -215,6 +215,7 @@ export default function OrderForm({
                 </label>
                 <input
                   type="text"
+                  autoComplete='name'
                   value={customerData.name}
                   onChange={(e) => setCustomerData(prev => ({ ...prev, name: e.target.value }))}
                   placeholder="Tu nombre completo"
@@ -231,6 +232,7 @@ export default function OrderForm({
                 </label>
                 <input
                   type="tel"
+                  autoComplete='tel'
                   value={customerData.phone}
                   onChange={(e) => setCustomerData(prev => ({ ...prev, phone: e.target.value }))}
                   placeholder="987 654 321"
@@ -247,6 +249,7 @@ export default function OrderForm({
                 </label>
                 <input
                   type="text"
+                  autoComplete='address'
                   value={customerData.address}
                   onChange={(e) => setCustomerData(prev => ({ ...prev, address: e.target.value }))}
                   placeholder="Ej: Av. Lima 123, Miraflores"
@@ -269,18 +272,9 @@ export default function OrderForm({
                   disabled={isSubmitting}
                 >
                   <option value="">Selecciona tu distrito</option>
-                  <option value="Miraflores">Miraflores</option>
-                  <option value="San Isidro">San Isidro</option>
+                  <option value="Chorrillos">Chorrillos</option>
                   <option value="Barranco">Barranco</option>
                   <option value="Surco">Surco</option>
-                  <option value="La Molina">La Molina</option>
-                  <option value="San Borja">San Borja</option>
-                  <option value="Lima Centro">Lima Centro</option>
-                  <option value="Jesús María">Jesús María</option>
-                  <option value="Magdalena">Magdalena</option>
-                  <option value="Pueblo Libre">Pueblo Libre</option>
-                  <option value="Lince">Lince</option>
-                  <option value="Breña">Breña</option>
                 </select>
               </div>
 

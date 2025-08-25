@@ -155,8 +155,8 @@ export default function Landing({ onSelectOrderType, onViewHistory }: LandingPro
               </button>
             </div>
           )}
-          <p className="text-sm">📍 Lima, Perú • 📞 (01) 123-4567</p>
-          <p className="text-xs mt-2">Abierto todos los días de 11:00 AM a 11:00 PM</p>
+          <p className="text-sm">📍 Chorrillos, Lima, Perú • 📞 (51) 927 272 866</p>
+          <p className="text-xs mt-2">Abierto todos los días de 10:00 AM a 11:00 PM</p>
         </div>
       </div>
 
