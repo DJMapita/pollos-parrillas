@@ -62,7 +62,7 @@ export default function OrderHistory({ onBack, onReorder }: OrderHistoryProps) {
             <p className="text-gray-600 mb-8">Cuando realices tu primer pedido, aparecerá aquí</p>
             <button
               onClick={onBack}
-              className="bg-red-500 text-white px-8 py-3 rounded-full font-bold hover:bg-red-600 transition-colors"
+              className="bg-orange-500 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-600 transition-colors"
             >
               Hacer Pedido
             </button>
@@ -75,13 +75,13 @@ export default function OrderHistory({ onBack, onReorder }: OrderHistoryProps) {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-4 flex items-center shadow-lg">
-        <button onClick={onBack} className="mr-4 hover:bg-white/20 p-2 rounded-full transition-colors">
+      <div className="bg-black text-white p-4 flex items-center shadow-lg border-b border-orange-500">
+        <button onClick={onBack} className="mr-4 hover:bg-gray-800 p-2 rounded-full transition-colors">
           <ArrowLeft className="w-6 h-6" />
         </button>
         <div>
           <h1 className="text-xl font-bold">Historial de Pedidos</h1>
-          <p className="text-red-100 text-sm">{orders.length} pedido{orders.length !== 1 ? 's' : ''}</p>
+          <p className="text-gray-300 text-sm">{orders.length} pedido{orders.length !== 1 ? 's' : ''}</p>
         </div>
       </div>
 
@@ -130,7 +130,7 @@ export default function OrderHistory({ onBack, onReorder }: OrderHistoryProps) {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-red-600">
+                    <div className="text-2xl font-bold text-orange-600">
                       S/ {order.total.toFixed(2)}
                     </div>
                   </div>
@@ -161,7 +161,7 @@ export default function OrderHistory({ onBack, onReorder }: OrderHistoryProps) {
                 <div className="flex space-x-3">
                   <button
                     onClick={() => onReorder(order)}
-                    className="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-xl font-medium transition-colors"
+                    className="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-medium transition-colors"
                   >
                     Pedir de Nuevo
                   </button>
