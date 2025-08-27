@@ -159,38 +159,6 @@ export default function Landing({ onSelectOrderType, onViewHistory }: LandingPro
           <p className="text-xs mt-2">Abierto todos los días de 10:00 AM a 11:00 PM</p>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fadeInDown {
-          animation: fadeInDown 1s ease-out;
-        }
-        
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s ease-out;
-        }
-      `}</style>
     </div>
   );
 }

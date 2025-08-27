@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircle, MessageCircle, Phone, Home } from 'lucide-react';
 
 interface OrderConfirmationProps {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, MapPin, User, Phone, Home, MessageSquare, CreditCard, DollarSign, Smartphone, Plus, Trash2, Star } from 'lucide-react';
-import { CartItem, OrderData } from '../types';
+import { ArrowLeft, MapPin, User, Phone, Home, MessageSquare, CreditCard, DollarSign, Smartphone, Trash2, Star } from 'lucide-react';
 import { sendOrderToWhatsApp } from '../utils/whatsapp';
 import { getCustomerProfile, saveCustomerProfile, initializeCustomerProfile, saveAddress, updateDefaultAddress, deleteAddress, addOrderToHistory } from '../utils/storage';
 

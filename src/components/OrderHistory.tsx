@@ -1,6 +1,4 @@
-import React from 'react';
 import { ArrowLeft, Clock, MapPin, Home, DollarSign, CreditCard, Smartphone } from 'lucide-react';
-import { OrderData } from '../types';
 import { getCustomerProfile } from '../utils/storage';
 
 interface OrderHistoryProps {

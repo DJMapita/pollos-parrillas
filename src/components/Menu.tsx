@@ -73,84 +73,88 @@ export default function Menu({ cart, onAddToCart, onUpdateQuantity, onViewCart, 
             const quantity = getItemQuantity(item.id);
             return (
               <div key={item.id} className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="flex">
-                  <div className="flex-1 p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl font-bold text-gray-800">{item.name}</h3>
-                      {item.isOffer && (
-                        <div className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center">
-                          <Tag className="w-3 h-3 mr-1" />
-                          OFERTA
-                        </div>
-                      )}
-                    </div>
+  <div className="flex flex-col md:flex-row">
+    {/* Imagen primero en móvil */}
+    <div className="w-full md:w-[180px] h-[200px] md:h-auto bg-gray-200 relative">
+      <img
+        src={item.image}
+        alt={item.name}
+        className="w-full h-full object-cover"
+      />
+      {item.includesDrink && (
+        <img
+          src="/bebida.jpg"
+          alt="Incluye gaseosa"
+          className="absolute top-1 left-1 w-14 h-14 rounded-full shadow-lg"
+        />
+      )}
+      {item.isOffer && (
+        <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold">
+          %
+        </div>
+      )}
+    </div>
 
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.description}</p>
+    {/* Contenido */}
+    <div className="flex-1 p-6">
+      <div className="flex items-start justify-between mb-3">
+        <h3 className="text-xl font-bold text-gray-800">{item.name}</h3>
+        {item.isOffer && (
+          <div className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center">
+            <Tag className="w-3 h-3 mr-1" />
+            OFERTA
+          </div>
+        )}
+      </div>
 
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-2xl font-bold text-orange-600">
-                          S/ {item.price.toFixed(2)}
-                        </span>
-                        {item.originalPrice && (
-                          <span className="text-lg text-gray-400 line-through">
-                            S/ {item.originalPrice.toFixed(2)}
-                          </span>
-                        )}
-                      </div>
+      <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.description}</p>
 
-                      <div className="flex items-center space-x-3">
-                        {quantity === 0 ? (
-                          <button
-                            onClick={() => onAddToCart(item)}
-                            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-colors flex items-center space-x-2"
-                          >
-                            <Plus className="w-4 h-4" />
-                            <span>Agregar</span>
-                          </button>
-                        ) : (
-                          <div className="flex items-center space-x-3 bg-gray-100 rounded-full px-3 py-2">
-                            <button
-                              onClick={() => onUpdateQuantity(item.id, quantity - 1)}
-                              className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
-                            >
-                              <Minus className="w-4 h-4" />
-                            </button>
-                            <span className="font-bold text-lg min-w-[20px] text-center">{quantity}</span>
-                            <button
-                              onClick={() => onUpdateQuantity(item.id, quantity + 1)}
-                              className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
-                            >
-                              <Plus className="w-4 h-4" />
-                            </button>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+      {/* Precio + botones */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <span className="text-2xl font-bold text-orange-600">
+            S/ {item.price.toFixed(2)}
+          </span>
+          {item.originalPrice && (
+            <span className="text-lg text-gray-400 line-through">
+              S/ {item.originalPrice.toFixed(2)}
+            </span>
+          )}
+        </div>
 
-                  <div className="w-[180px] h-180px] bg-gray-200 relative">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Notificación en la esquina superior izquierda */}
-                    {item.includesDrink && (
-                      <img
-                        src="/bebida.jpg"  // aquí va la ruta de tu icono/imagen
-                        alt="Incluye gaseosa"
-                        className="absolute top-1 left-1 w-14 h-14 rounded-full shadow-lg"
-                      />
-                    )}
-                    {item.isOffer && (
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold">
-                        %
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+        {/* Botones cantidad */}
+        <div className="flex items-center space-x-3">
+          {quantity === 0 ? (
+            <button
+              onClick={() => onAddToCart(item)}
+              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-colors flex items-center space-x-2"
+            >
+              <Plus className="w-4 h-4" />
+              <span>Agregar</span>
+            </button>
+          ) : (
+            <div className="flex items-center space-x-3 bg-gray-100 rounded-full px-3 py-2">
+              <button
+                onClick={() => onUpdateQuantity(item.id, quantity - 1)}
+                className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
+              >
+                <Minus className="w-4 h-4" />
+              </button>
+              <span className="font-bold text-lg min-w-[20px] text-center">{quantity}</span>
+              <button
+                onClick={() => onUpdateQuantity(item.id, quantity + 1)}
+                className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
+              >
+                <Plus className="w-4 h-4" />
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
             );
           })}
         </div>

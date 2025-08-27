@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Plus, Minus, Trash2, MessageSquare } from 'lucide-react';
-import { CartItem } from '../types';
 
 interface CartProps {
   cart: CartItem[];
