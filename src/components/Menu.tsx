@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Plus, Minus, ShoppingBag, Tag, History, User } from 'lucide-react';
-import { MenuItem, CartItem } from '../types';
 import { menuItems, categories } from '../data/menu';
 import { getCustomerProfile } from '../utils/storage';
 
@@ -54,11 +53,10 @@ export default function Menu({ cart, onAddToCart, onUpdateQuantity, onViewCart, 
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${
-                  selectedCategory === category.id
+                className={`flex items-center space-x-2 px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${selectedCategory === category.id
                     ? 'bg-orange-500 text-white shadow-lg scale-105'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 <span>{category.icon}</span>
                 <span>{category.name}</span>
@@ -86,9 +84,9 @@ export default function Menu({ cart, onAddToCart, onUpdateQuantity, onViewCart, 
                         </div>
                       )}
                     </div>
-                    
+
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.description}</p>
-                    
+
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <span className="text-2xl font-bold text-orange-600">
@@ -100,7 +98,7 @@ export default function Menu({ cart, onAddToCart, onUpdateQuantity, onViewCart, 
                           </span>
                         )}
                       </div>
-                      
+
                       <div className="flex items-center space-x-3">
                         {quantity === 0 ? (
                           <button
@@ -130,13 +128,21 @@ export default function Menu({ cart, onAddToCart, onUpdateQuantity, onViewCart, 
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="w-32 h-32 bg-gray-200 relative">
-                    <img 
-                      src={item.image} 
+
+                  <div className="w-[180px] h-180px] bg-gray-200 relative">
+                    <img
+                      src={item.image}
                       alt={item.name}
                       className="w-full h-full object-cover"
                     />
+                    {/* Notificación en la esquina superior izquierda */}
+                    {item.includesDrink && (
+                      <img
+                        src="/bebida.jpg"  // aquí va la ruta de tu icono/imagen
+                        alt="Incluye gaseosa"
+                        className="absolute top-1 left-1 w-14 h-14 rounded-full shadow-lg"
+                      />
+                    )}
                     {item.isOffer && (
                       <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold">
                         %
