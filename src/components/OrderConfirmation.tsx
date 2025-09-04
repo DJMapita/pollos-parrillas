@@ -50,8 +50,8 @@ export default function OrderConfirmation({ orderType, onStartOver }: OrderConfi
             Contáctanos directamente:
           </p>
           <div className="space-y-2 text-sm">
-            <p><strong>WhatsApp:</strong> +51 927 272 866</p>
-            <p><strong>Teléfono:</strong> (51) 927 272 866</p>
+            <p><strong>WhatsApp:</strong> +51 978 654 321</p>
+            <p><strong>Teléfono:</strong> (51) 978 654 321</p>
           </div>
         </div>
 

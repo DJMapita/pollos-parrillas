@@ -67,12 +67,12 @@ export default function Landing({ onSelectOrderType, onViewHistory }: LandingPro
         <div className="text-center pt-12 pb-8">
           <div className="animate-fadeInDown">
             <img 
-              src="/GranPollonLogo.png" 
+              src="/RestauranteLogo.png" 
               alt="Logo" 
               className="w-32 h-32 mx-auto"
             />
             <h1 className="text-5xl md:text-7xl font-bold text-orange-600 mb-4">
-              GRAN POLLON
+              Tu restaurante
             </h1>
             <p className="text-xl md:text-2xl text-orange-200 font-light">
               Pollos & Parrillas
@@ -155,7 +155,7 @@ export default function Landing({ onSelectOrderType, onViewHistory }: LandingPro
               </button>
             </div>
           )}
-          <p className="text-sm">📍 Chorrillos, Lima, Perú • 📞 (51) 927 272 866</p>
+          <p className="text-sm">📍 Chorrillos, Lima, Perú • 📞 (51) 978 645 312</p>
           <p className="text-xs mt-2">Abierto todos los días de 10:00 AM a 11:00 PM</p>
         </div>
       </div>
